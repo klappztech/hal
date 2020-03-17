@@ -8,11 +8,16 @@
 include_once 'db_functions.php';
 $db = new DB_Functions();
 
-if (isset($_GET["search"])) {
-   $search = $_GET["search"];
+if (isset($_GET["pb_no"])) {
+   $pb_no = $_GET["pb_no"];
+}
+else {
+   header("location:search.php");
 }
 
-$search_result = $db->searchCandidate($search);
+$mark_result = $db->markAsGifted($pb_no,$user_id);
+
+$search_result = $db->searchCandidate($pb_no);
 $row = $search_result->fetch_array();
 
 
@@ -26,16 +31,20 @@ $row = $search_result->fetch_array();
       <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
    </head>
+
+
       
    <body>
+
+
+
       <div data-role = "page" id = "pageone">
          <div data-role = "header">
             <h1>HAL Election</h1>
          </div>
 
          <div data-role = "main" class = "ui-content">
-            <form action="mark_as_gifted.php">
-            <input type="hidden" name="pb_no" value="<?php echo $row['PB_NO']; ?>" >
+            <form>
 
                <h2><?php echo $row['NAME']; ?></h2>
                <table>
@@ -59,16 +68,17 @@ $row = $search_result->fetch_array();
                </table>
                <?php if($row['GIFTED']==0) { ?>
                   <div class="status pending">PENDING</div>
-                  <input type="submit" value="Mark As Gifted" data-icon="shop" data-theme="b" >
-               <?php } else { ?>
-                  <div class="status given">GIFTED</div>
+                  <input type="button" value="Mark As Gifted" data-icon="shop" data-theme="b" >
+               <?php } else if($row['GIFTED']==1 && $mark_result==false) { ?>
+                  <div class="status given">DONT GIVE</div>
+                  <div class="agent-name">Given by <?php echo $db->getAgentnameById($row['AGENT']); ?></div>
+               <?php } else  { ?>
+                  <div class="status given">GIVE NOW</div>
                   <div class="agent-name">Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b></div>
                <?php } ?>
 				  <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left">Back to Search</a>
 
 
-
-              
             </form>
          </div>
 

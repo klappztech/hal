@@ -19,14 +19,68 @@ class DB_Functions {
         
     }
 
+    public function loginCheck($myusername, $mypassword) {
+		
+		$result =  $this->conn->query( "SELECT * FROM `agents` WHERE `username` = '$myusername' and `password` = '$mypassword' ");
+        $count = $result->num_rows;
+
+        if($count == 1) {
+            //session_register("myusername");
+            $row = $result->fetch_array();
+
+            $_SESSION['login_user'] = $row['username'];
+            $_SESSION['user_id'] = $row['id'];
+
+            $return = true; 
+         }else {
+            $return = false;
+         }
+       
+        return $return;
+		
+    }
+
+    public function getAgentnameById($agent_id) {
+		
+		$result =  $this->conn->query( "SELECT * FROM `agents` WHERE `id` = $agent_id ");
+        $count = $result->num_rows;
+
+        if($count == 1) {
+            //session_register("myusername");
+            $row = $result->fetch_array();
+
+            $agent_name = $row['username'];
+
+         }else {
+            $agent_name = "unknown";
+         }
+       
+        return $agent_name;
+		
+    }
+
 	
 	/* search candidates by PB_NO */
     public function searchCandidate($pb_no) {
 		
-		//if this used in present in the parents table?
 		$result =  $this->conn->query("SELECT * from candidates WHERE PB_NO='$pb_no'");
-		// user is present in the db
 		return $result;
+		
+    }
+    public function markAsGifted($pb_no,$agent_id) {
+		
+        //check if still not gifted
+        $result =  $this->conn->query("SELECT * from candidates WHERE PB_NO='$pb_no' AND GIFTED=0 ");
+        
+        if ($result->num_rows > 0) {
+            //mark as gifted
+            $result_update = $this->conn->query("UPDATE candidates SET GIFTED=1, AGENT=$agent_id WHERE PB_NO='$pb_no' ");
+            return true;
+			
+		} else {
+			// already gifted, return failure
+            return false;
+		}
 		
 	}
 	

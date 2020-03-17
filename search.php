@@ -1,3 +1,6 @@
+<?php
+   include('session.php');
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -23,6 +26,11 @@
                <input type="submit" value="Search" data-icon="search" data-theme="a">
             </form>
          </div>
+		 
+
+      <h1>Welcome <?php echo $user_check; ?></h1> 
+      <h2><a href = "logout.php">Sign Out</a></h2>
+
 
          <!-- div data-role = "footer">
             <h1>Footer Text</h1>
