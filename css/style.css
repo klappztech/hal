@@ -25,6 +25,18 @@
  .given{
     background: red;
  }
+ .dont-give{
+   background: red;
+   animation:blinkingText 1s infinite;
+}
+@keyframes blinkingText{
+   0%{     color: #000;    }
+   49%{    color: #000; }
+   60%{    color: transparent; }
+   99%{    color:transparent;  }
+   100%{   color: #000;    }
+}
+
  .agent-name{
    border: 3px solid #dad55e;
    border-radius: 8px;
@@ -41,6 +53,11 @@
 
 
  }
+
+ .error {
+   color:red;
+   display:block;
+}
 
 
  table {
