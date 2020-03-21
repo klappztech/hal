@@ -27,17 +27,17 @@ include('session.php');
             <?php echo $user_check; ?> </h1>
 
          <ul data-role="listview" data-inset="true">
-            <li><a href="Search">Search</a></li>
+            <li><a href="search.php">Search</a></li>
             <li><a href="gift_by_agent.php?agent_id=<?php echo $_SESSION['user_id'] ?>">Gifts by Me</a></li>
             <li><a href="list_of_agents.php">List of Agents</a></li>
             <li data-icon="power" data-theme="b"><a href="logout.php" class="">Logout</a></li>
          </ul>
 
       </div><!-- /panel -->
-      <div data-role="header">
-         <a href="#mypanel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline">Menu</a>
+      <div data-role="header" data-backbtn="true" data-position="fixed">
+         <a href="#mypanel" data-icon="bars" class="ui-btn-left">Menu</a>
          <h1>Search</h1>
-         <a href="logout.php" class="ui-btn ui-shadow ui-corner-all ui-icon-power ui-btn-icon-notext ui-btn-inline">Logout</a>
+         <a href="logout.php" data-icon="power" class="ui-btn-right">Logout</a>
       </div>
 
       <div data-role="main" class="ui-content">

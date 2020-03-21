@@ -42,9 +42,9 @@ if ($row_count > 0) {
 <body>
    <div data-role="page" id="pageone">
 
-   <div data-role="header" data-backbtn = "true" >
-         <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-inline">Delete</a>
-         <h1 style="text-align:left; margin-left:40px;"> Candidate Details </h1>
+   <div data-role="header" data-backbtn="true" data-position="fixed">
+         <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+         <h1>Voter Details</h1>
          <a href="logout.php" data-icon="power" class="ui-btn-right">Logout</a>
       </div>
 
@@ -78,7 +78,7 @@ if ($row_count > 0) {
                   <input type="submit" value="Mark As Gifted" data-icon="shop" data-theme="b">
                <?php } else { ?>
                   <div class="status given">GIFTED</div>
-                  <div class="agent-name">Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b></div>
+                  <div class="agent-name">Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b> <br>@ <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
                <?php } ?>
             <?php } else { ?>
                <div class="agent-name">PB_NO: "<?php echo $search; ?>" Not Found!</div>

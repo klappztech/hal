@@ -33,11 +33,10 @@ $row_count = $search_result->num_rows;
 <body>
    <div data-role="page" id="pageone">
 
-   
-      <div data-role="header" data-backbtn = "true" >
-         <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-inline">Delete</a>
-         <h1 style="text-align:left; margin-left:40px;">
-            <?php echo $user_check; ?> </h1>
+
+      <div data-role="header" data-backbtn="true" data-position="fixed">
+         <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+         <h1>List of Voters</h1>
          <a href="logout.php" data-icon="power" class="ui-btn-right">Logout</a>
       </div>
 
@@ -51,17 +50,21 @@ $row_count = $search_result->num_rows;
                <h3>Total: <?php echo $row_count ?></h3>
 
 
-               <ul data-role="listview" data-inset="true" >
+               <ul data-role="listview"  >
+               <li data-role="list-divider">Voters<span class="ui-li-count"><?php echo $row_count ?></span></li>
                   <?php
                   while ($row =  $search_result->fetch_array()) {
                   ?>
-                     <li><a href="search_result.php?pb_no=<?php echo $row['PB_NO'] ?>"><span class="ui-li-count"><?php echo $row['PB_NO']; ?></span> <?php echo $row['NAME']; ?></a></li>
-
+  
+                     <li><a href="search_result.php?pb_no=<?php echo $row['PB_NO'] ?>">
+                           <h2><?php echo $row['NAME']; ?></h2>
+                           <p><strong><?php echo $row['PB_NO']; ?></strong></p>
+                           <p class="ui-li-aside"><strong><?php echo date("M j, h:i A", $row['GIFT_TIME']); ?></strong></p>
+                        </a></li>
 
                   <?php } ?>
 
                </ul>
-               <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left">Back to Search</a>
          </form>
       </div>
 
