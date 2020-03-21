@@ -35,5 +35,4 @@ class DB_Connect {
         mysqli_close();
     }
  
-} 
-?>
+}

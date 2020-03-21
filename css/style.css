@@ -23,8 +23,11 @@
     background: #EDA123;
  }
  .given{
-    background: red;
+    background:red;
  }
+ .give-now{
+   background: rgb(0, 170, 23);
+}
  .dont-give{
    background: red;
    animation:blinkingText 1s infinite;
@@ -48,15 +51,15 @@
    font-size: 18px;
 
    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.35);
-
-
-
-
  }
 
  .error {
    color:red;
    display:block;
+}
+
+#mypanel {
+   text-align: center;
 }
 
 
