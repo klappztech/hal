@@ -27,7 +27,7 @@ $row_count = $search_result->num_rows;
 <body>
    <div data-role="page" id="pageone">
 
-      <div data-role="header" data-backbtn="true" data-position="fixed">
+      <div data-role="header" data-backbtn="true" data-position="fixed" data-theme="b">
          <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
          <h1>List of Agents</h1>
          <a href="logout.php" data-icon="power" class="ui-btn-right">Logout</a>

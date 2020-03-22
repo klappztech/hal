@@ -40,8 +40,8 @@ $row = $search_result->fetch_array();
 
    <div data-role="page" id="pageone">
 
-   <div data-role="header" data-backbtn="true" data-position="fixed">
-         <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+   <div data-role="header"  data-position="fixed" data-theme="b">
+         <a href="search.php" data-icon="home" class="ui-btn-left">Home</a>
          <h1>Voter Details</h1>
          <a href="logout.php" data-icon="power" class="ui-btn-right">Logout</a>
       </div>

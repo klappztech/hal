@@ -27,14 +27,14 @@ include('session.php');
             <?php echo $user_check; ?> </h1>
 
          <ul data-role="listview" data-inset="true">
-            <li><a href="search.php">Search</a></li>
+            <li><a href="search.php" data-rel="close">Search</a></li>
             <li><a href="gift_by_agent.php?agent_id=<?php echo $_SESSION['user_id'] ?>">Gifts by Me</a></li>
             <li><a href="list_of_agents.php">List of Agents</a></li>
             <li data-icon="power" data-theme="b"><a href="logout.php" class="">Logout</a></li>
          </ul>
 
       </div><!-- /panel -->
-      <div data-role="header" data-backbtn="true" data-position="fixed">
+      <div data-role="header" data-backbtn="true" data-position="fixed" data-theme="b">
          <a href="#mypanel" data-icon="bars" class="ui-btn-left">Menu</a>
          <h1>Search</h1>
          <a href="logout.php" data-icon="power" class="ui-btn-right">Logout</a>
@@ -54,7 +54,7 @@ include('session.php');
             </div>
 
 
-            <input type="submit" value="Search" data-icon="search" data-theme="a">
+            <input type="submit" value="Search" data-icon="search" data-theme="b">
          </form>
       </div>
 

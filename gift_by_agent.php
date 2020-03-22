@@ -34,7 +34,7 @@ $row_count = $search_result->num_rows;
    <div data-role="page" id="pageone">
 
 
-      <div data-role="header" data-backbtn="true" data-position="fixed">
+      <div data-role="header" data-backbtn="true" data-position="fixed" data-theme="b">
          <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
          <h1>List of Voters</h1>
          <a href="logout.php" data-icon="power" class="ui-btn-right">Logout</a>
@@ -59,7 +59,7 @@ $row_count = $search_result->num_rows;
                      <li><a href="search_result.php?pb_no=<?php echo $row['PB_NO'] ?>">
                            <h2><?php echo $row['NAME']; ?></h2>
                            <p><strong><?php echo $row['PB_NO']; ?></strong></p>
-                           <p class="ui-li-aside"><strong><?php echo date("M j, h:i A", $row['GIFT_TIME']); ?></strong></p>
+                           <p class="ui-li-aside"><?php echo date("M j, h:i A", $row['GIFT_TIME']); ?></p>
                         </a></li>
 
                   <?php } ?>

@@ -14,6 +14,7 @@ if (isset($_GET["pb_no"])) {
    if (strlen($_POST["search_part2"]) > 0) {
       $search .= "-" . $_POST["search_part2"];
    }
+   
 }
 
 $search_result = $db->searchCandidate($search);
@@ -42,7 +43,7 @@ if ($row_count > 0) {
 <body>
    <div data-role="page" id="pageone">
 
-   <div data-role="header" data-backbtn="true" data-position="fixed">
+   <div data-role="header" data-backbtn="true" data-position="fixed" data-theme="b">
          <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
          <h1>Voter Details</h1>
          <a href="logout.php" data-icon="power" class="ui-btn-right">Logout</a>
@@ -75,7 +76,7 @@ if ($row_count > 0) {
                </table>
                <?php if ($row['GIFTED'] == 0) { ?>
                   <div class="status pending">PENDING</div>
-                  <input type="submit" value="Mark As Gifted" data-icon="shop" data-theme="b">
+                  <input type="submit" value="Check and Give" data-icon="shop" data-theme="b">
                <?php } else { ?>
                   <div class="status given">GIFTED</div>
                   <div class="agent-name">Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b> <br>@ <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
