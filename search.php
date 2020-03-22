@@ -7,9 +7,9 @@ include('session.php');
 <head>
    <meta name="viewport" content="width = device-width, initial-scale = 1">
    <link rel="stylesheet" href="themes/android_blue.min.css" />
-<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-     <link rel="stylesheet" type="text/css" href="./css/style.css">
+   <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+   <link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.5.min.css" />
+   <link rel="stylesheet" type="text/css" href="./css/style.css">
    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
@@ -28,7 +28,7 @@ include('session.php');
          <h1 style="text-align:center;text-transform: capitalize">
             <?php echo $user_check; ?> </h1>
 
-         <ul data-role="listview" data-inset="true">
+         <ul data-role="listview" data-inset="true" class="ui-alt-icon">
             <li><a href="search.php" data-rel="close">Search</a></li>
             <li><a href="gift_by_agent.php?agent_id=<?php echo $_SESSION['user_id'] ?>">Gifts by Me</a></li>
             <li><a href="list_of_agents.php">List of Agents</a></li>
