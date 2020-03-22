@@ -32,7 +32,10 @@ if ($row_count > 0) {
 <head>
    <meta name="viewport" content="width = device-width, initial-scale = 1">
    <link rel="stylesheet" type="text/css" href="./css/style.css">
-   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+   <link rel="stylesheet" href="themes/android_blue.min.css" />
+   <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+   <link rel="stylesheet" type="text/css" href="./css/style.css">
 
    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -85,7 +88,7 @@ if ($row_count > 0) {
                <div class="agent-name">PB_NO: "<?php echo $search; ?>" Not Found!</div>
             <?php } ?>
 
-            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left">Back to Search</a>
+            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Back to Search</a>
 
 
 

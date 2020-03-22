@@ -24,8 +24,10 @@ $row = $search_result->fetch_array();
 
 <head>
    <meta name="viewport" content="width = device-width, initial-scale = 1">
+   <link rel="stylesheet" href="themes/android_blue.min.css" />
+   <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
    <link rel="stylesheet" type="text/css" href="./css/style.css">
-   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -79,7 +81,7 @@ $row = $search_result->fetch_array();
                <div class="status give-now">GIVE NOW</div>
                <div class="agent-name">Marked as Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b><br>@ <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
             <?php } ?>
-            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left">Back to Search</a>
+            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Back to Search</a>
 
 
          </form>

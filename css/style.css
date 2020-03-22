@@ -1,80 +1,88 @@
-.status{
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.status {
+   font-family: 'Anton', sans-serif;
+   font-size: 40px;
+   letter-spacing: 0px;
+   word-spacing: 0px;
+   text-transform: uppercase;
+   border-style: solid;
+   border-width: 8px;
+   padding: 10px;
+   text-align: center;
+   margin: 20px;
+   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.35);
+   color: #FFFFFF;
+   border-color: #FFFFFF;
+}
 
-    font-family: Impact, Charcoal, sans-serif;
-    font-size: 40px;
-    letter-spacing: 0px;
-    word-spacing: 0px;
-    text-transform: uppercase;
+.pending {
+   background: #EDA123;
+}
 
-    border-style: solid;
-    border-width: 8px;
-    padding: 10px;
-    text-align:center;
-    margin: 20px;
+.given {
+   background: red;
+}
 
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.35);
-
-    color: #FFFFFF;
-    border-color: #FFFFFF;
- 
- }
- 
- .pending{
-    background: #EDA123;
- }
- .given{
-    background:red;
- }
- .give-now{
+.give-now {
    background: rgb(0, 170, 23);
 }
- .dont-give{
+
+.dont-give {
    background: red;
-   animation:blinkingText 1s infinite;
-}
-@keyframes blinkingText{
-   0%{     color: #000;    }
-   49%{    color: #000; }
-   60%{    color: transparent; }
-   99%{    color:transparent;  }
-   100%{   color: #000;    }
+   animation: blinkingText 1s infinite;
 }
 
- .agent-name{
+@keyframes blinkingText {
+   0% {
+      color: #000;
+   }
+   49% {
+      color: #000;
+   }
+   60% {
+      color: transparent;
+   }
+   99% {
+      color: transparent;
+   }
+   100% {
+      color: #000;
+   }
+}
+
+.agent-name {
    border: 3px solid #dad55e;
    border-radius: 8px;
    padding: 10px;
    margin: 20px;
    background: #fffa90;
    color: #777620;
-   text-align:center;
+   text-align: center;
    font-size: 18px;
+   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.35);
+}
 
-   box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.35);
- }
-
- .error {
-   color:red;
-   display:block;
+.error {
+   color: red;
+   display: block;
 }
 
 #mypanel {
    text-align: center;
 }
 
+table {
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+}
 
- table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    }
+td, th {
+   border: 1px solid #dddddd;
+   text-align: left;
+   padding: 8px;
+}
 
-    td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    }
-
-    tr:nth-child(even) {
-    background-color: #dddddd;
-    }
+tr:nth-child(even) {
+   background-color: #dddddd;
+}
