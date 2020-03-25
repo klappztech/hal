@@ -18,6 +18,8 @@ if (isset($_POST['username'])) {
    $login_result = $db->loginCheckHash($myusername, $mypassword);
 
    if ($login_result == true) {
+
+      $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "logged in", "");
       header("location: search.php");
    }
 }

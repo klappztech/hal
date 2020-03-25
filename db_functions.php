@@ -129,7 +129,7 @@ class DB_Functions
   public function searchGiftedCandidate($agent_id)
   {
 
-    $result =  $this->conn->query("SELECT * from candidates WHERE GIFTED=1 AND AGENT=$agent_id ");
+    $result =  $this->conn->query("SELECT * from candidates WHERE GIFTED=1 AND AGENT=$agent_id ORDER BY `GIFT_TIME` DESC");
     return $result;
   }
   /* search candidates by PB_NO */
@@ -165,6 +165,21 @@ class DB_Functions
     }
   }
 
+  /* search candidates by PB_NO */
+  public function add2Log($user_id, $username, $action, $param1)
+  {
+    $current_time = time();
+
+    $result =  $this->conn->query("INSERT INTO `log`(`TIME`, `USER_ID`, `USERNAME_TXT`, `ACTION`, `PARAM1`) VALUES ( $current_time,$user_id,'$username','$action', '$param1')");
+  }
+
+  /* list of all distincts agent who distributed gifts */
+  public function getAlllog()
+  {
+
+    $result =  $this->conn->query("SELECT * FROM `log` WHERE 1 ORDER BY `TIME` DESC LIMIT 5");
+    return $result;
+  }
 
   /**
    * Getting all users

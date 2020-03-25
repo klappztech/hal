@@ -74,10 +74,13 @@ $row = $search_result->fetch_array();
             <?php if ($row['GIFTED'] == 0) { ?>
                <div class="status pending">PENDING</div>
                <input type="button" value="Mark As Gifted" data-icon="shop" data-theme="b">
-            <?php } else if ($row['GIFTED'] == 1 && $mark_result == false) { ?>
+            <?php } else if ($row['GIFTED'] == 1 && $mark_result == false) {
+                  $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "Mark: DONT GIVE, PB_NO:", $row['PB_NO']);
+                  ?>
                <div class="status dont-give">DONT GIVE</div>
                <div class="agent-name">Already Given by <b><?php echo $db->getAgentnameById($row['AGENT']); ?></b><br>@ <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
-            <?php } else if ($row['GIFTED'] == 1 && $mark_result == true) { ?>
+            <?php } else if ($row['GIFTED'] == 1 && $mark_result == true) { 
+                  $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "Mark: GIVE NOW, PB_NO:", $row['PB_NO']);?>
                <div class="status give-now">GIVE NOW</div>
                <div class="agent-name">Marked as Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b><br>@ <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
             <?php } ?>

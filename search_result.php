@@ -22,9 +22,7 @@ $row_count = $search_result->num_rows;
 
 if ($row_count > 0) {
    $row = $search_result->fetch_array();
-}
-
-
+} 
 
 
 ?>
@@ -77,14 +75,17 @@ if ($row_count > 0) {
                   </tr>
 
                </table>
-               <?php if ($row['GIFTED'] == 0) { ?>
+               <?php if ($row['GIFTED'] == 0) {  
+                  $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "Search: PENDING, PB_NO:", $row['PB_NO']);?>
                   <div class="status pending">PENDING</div>
                   <input type="submit" value="Check and Give" data-icon="shop" data-theme="b">
-               <?php } else { ?>
+               <?php } else {  
+                  $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "Search: GIFTED, PB_NO:", $row['PB_NO']);?>
                   <div class="status given">GIFTED</div>
                   <div class="agent-name">Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b> <br>@ <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
                <?php } ?>
-            <?php } else { ?>
+            <?php } else {   
+                  $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "Search: Not found, PB_NO:", $search);?>
                <div class="agent-name">PB_NO: "<?php echo $search; ?>" Not Found!</div>
             <?php } ?>
 
