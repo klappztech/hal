@@ -1,8 +1,6 @@
 <?php
 include('session.php');
 ?>
-<!DOCTYPE html>
-<html>
 <?php
 
 include_once 'db_functions.php';
@@ -12,22 +10,21 @@ $search_result = $db->getAlllog();
 
 ?>
 
-
-         <form method="post">
-            <div>
-
-               <ul data-role="listview">
-                  <?php
+<table style="width:100%"  id="logtable">
+  <tr>
+    <th>Time</th>
+    <th>Agent</th>
+    <th>Action</th>
+  </tr>
+  <?php
                   while ($row =  $search_result->fetch_array()) {
                   ?>
+  <tr>
+    <td><?php echo date("M j, h:i A", $row['TIME']); ?></td>
+    <td><?php echo $row['USERNAME_TXT']; ?></td>
+    <td><?php echo $row['ACTION']; ?> <?php echo $row['PARAM1']; ?></td>
+  </tr>
 
-                     <li id="log_list">
-                        <?php echo $row['ACTION']; ?> <?php echo $row['PARAM1']; ?>
-                        <p>by <?php echo $row['USERNAME_TXT']; ?></p>
-                        <p class="ui-li-aside"><?php echo date("M j, h:i A", $row['TIME']); ?></p>
-                     </li>
+  <?php } ?>
 
-                  <?php } ?>
-
-               </ul>
-         </form>
+</table> 

@@ -177,7 +177,7 @@ class DB_Functions
   public function getAlllog()
   {
 
-    $result =  $this->conn->query("SELECT * FROM `log` WHERE 1 ORDER BY `TIME` DESC LIMIT 5");
+    $result =  $this->conn->query("SELECT * FROM `log` WHERE 1 ORDER BY `TIME` DESC LIMIT 50");
     return $result;
   }
 
