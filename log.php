@@ -26,9 +26,9 @@ $search_result = $db->getAlllog();
    <div data-role="page" id="pageone">
 
 
-      <div data-role="header" data-position="fixed" data-theme="b">
-         <a href="search.php" data-icon="back" class="ui-btn-left">[Home]</a>
-         <a href="logout.php" data-icon="power" class="ui-btn-right">[Logout]</a>
+      <div style="padding:10px;">
+         <a href="search.php" >[Home]</a>
+         <a href="logout.php" >[Logout]</a>
 
          <h1>Log</h1>
       </div>

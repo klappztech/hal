@@ -89,7 +89,7 @@ tr:nth-child(even) {
 
 #logtable {
    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-   font-size:10px;
+   font-size:8px;
    border-collapse: collapse;
    width: 100%;
  }
