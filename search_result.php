@@ -58,11 +58,11 @@ if ($row_count > 0) {
                <h2><?php echo $row['NAME']; ?></h2>
                <table>
                   <tr>
-                     <th>PB No:</th>
+                     <th>PB No</th>
                      <td><?php echo $row['PB_NO']; ?></td>
                   </tr>
                   <tr>
-                     <th>MEMB No:</th>
+                     <th>MEMB No</th>
                      <td><?php echo $row['MEMB_NO']; ?></td>
                   </tr>
                   <tr>
@@ -82,14 +82,14 @@ if ($row_count > 0) {
                <?php } else {  
                   $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "Search: GIFTED, PB_NO:", $row['PB_NO']);?>
                   <div class="status given">GIFTED</div>
-                  <div class="agent-name">Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b> <br>@ <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
+                  <div class="agent-name">Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b> <br>at <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
                <?php } ?>
             <?php } else {   
                   $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "Search: Not found, PB_NO:", $search);?>
                <div class="agent-name">PB_NO: "<?php echo $search; ?>" Not Found!</div>
             <?php } ?>
 
-            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Back to Search</a>
+            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Search</a>
 
 
 

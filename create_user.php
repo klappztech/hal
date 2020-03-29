@@ -60,7 +60,7 @@ if (isset($_POST['username'])) {
             <label for="password">Password:</label>
             <input type="password" data-clear-btn="false" name="password" id="password" value="" autocomplete="off" minlength="4" required>
             <input type="submit" value="Create User" data-theme="b">
-            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Back to Search</a>
+            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Search</a>
 
          </form>
       </div>

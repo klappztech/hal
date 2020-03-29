@@ -54,11 +54,11 @@ $row = $search_result->fetch_array();
             <h2><?php echo $row['NAME']; ?></h2>
             <table>
                <tr>
-                  <th>PB No:</th>
+                  <th>PB No</th>
                   <td><?php echo $row['PB_NO']; ?></td>
                </tr>
                <tr>
-                  <th>MEMB No:</th>
+                  <th>MEMB No</th>
                   <td><?php echo $row['MEMB_NO']; ?></td>
                </tr>
                <tr>
@@ -78,13 +78,13 @@ $row = $search_result->fetch_array();
                   $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "Mark: DONT GIVE, PB_NO:", $row['PB_NO']);
                   ?>
                <div class="status dont-give">DONT GIVE</div>
-               <div class="agent-name">Already Given by <b><?php echo $db->getAgentnameById($row['AGENT']); ?></b><br>@ <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
+               <div class="agent-name">Already Given by <b><?php echo $db->getAgentnameById($row['AGENT']); ?></b><br>at <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
             <?php } else if ($row['GIFTED'] == 1 && $mark_result == true) { 
                   $db->add2Log( $_SESSION['user_id'], $_SESSION['login_user'], "Mark: GIVE NOW, PB_NO:", $row['PB_NO']);?>
                <div class="status give-now">GIVE NOW</div>
-               <div class="agent-name">Marked as Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b><br>@ <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
+               <div class="agent-name">Marked as Given by <b> <?php echo $db->getAgentnameById($row['AGENT']); ?></b><br>at <?php echo date("d/m/Y, h:i A", $row['GIFT_TIME']); ?> </br></div>
             <?php } ?>
-            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Back to Search</a>
+            <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Search</a>
 
 
          </form>

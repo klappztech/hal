@@ -54,7 +54,7 @@ $row_count = $search_result->num_rows;
                   <?php } ?>
 
                </ul>
-               <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Back to Search</a>
+               <a href="search.php" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">Search</a>
          </form>
       </div>
 
