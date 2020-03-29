@@ -33,7 +33,7 @@ include('session.php');
             <li><a href="gift_by_agent.php?agent_id=<?php echo $_SESSION['user_id'] ?>">Gifts by Me</a></li>
             <li><a href="list_of_agents.php">List of Agents</a></li>
             <li><a href="create_user.php">Add Agent</a></li>
-			<!--li><a href="log.php">Activity Log</a></li -->
+			<li><a href="log.php">Activity Log</a></li>
             <li data-icon="power" data-theme="b"><a href="logout.php" class="">Logout</a></li>
          </ul>
 
